@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "iran";
+    src: url("./../public/fonts/IRANSansX-Regular.woff") format("woff"),
+      url("./../public/fonts/IRANSansX-Regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "iran-bold";
+    src: url("./../public/fonts/IRANSansX-Bold.woff") format("woff"),
+      url("./../public/fonts/IRANSansX-Bold.woff2") format("woff2");
+  }
+}
+@layer components {
+  .menu-item {
+    @apply relative cursor-pointer flex items-center justify-center dark:bg-item-mobile bg-btn-bg w-12 h-12 rounded-full transition-all duration-300 dark:lg:bg-item-dark hover:bg-primary dark:hover:bg-primary;
+  }
+  .menu-item-text{
+   @apply hidden lg:absolute lg:top-0 lg:right-0 lg:leading-[3rem] lg:pl-6 lg:pr-8 lg:opacity-0 lg:text-sm lg:whitespace-nowrap lg:rounded-[30px] lg:bg-primary lg:text-white lg:h-12 lg:-z-10 lg:transition-all lg:duration-300 lg:group-hover:right-6 lg:group-hover:rounded-tl-[30px] lg:group-hover:rounded-tr-none lg:group-hover:rounded-bl-[30px] lg:group-hover:rounded-br-none lg:group-hover:opacity-100
+  }
+  .menu-iten-icon{
+    @apply text-txt-gray text-xl transition-all duration-300 dark:text-white group-hover:text-white
+  }
+}
+
+@layer utilities {
+  .clip-path-left {
+    clip-path: polygon(0 0, 58% 0, 100% 100%, 0 100%);
+  }
+}

@@ -1,0 +1,14 @@
+.persian {
+  direction: rtl;
+}
+.bg-me {
+  background: url("./../public/dark.jpg") no-repeat center;
+  background-size: cover;
+}
+.app::-webkit-scrollbar {
+  display: none;
+}
+
+.app {
+  scrollbar-width: none;
+}
