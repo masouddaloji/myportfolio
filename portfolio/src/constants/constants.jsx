@@ -59,16 +59,17 @@ export const personalInfos=[
         title:"تلفن",
         value:"09039730443"
     },
-    {
-        id:"personal-email",
-        title:"ایمیل",
-        value:"masouddaloji.front@gmail.com"
-    },
+   
     {
         id:"personal-github",
         title:"گیت هاب",
         value:"masouddaloji"
     },
+    {
+        id:"personal-email",
+        title:"ایمیل",
+        value:"masouddaloji.front@gmail.com"
+    }
   
 ]
 export const personalAnalize=[
@@ -138,5 +139,42 @@ export const skills=[
         id:"skils-redux",
         title:"redux",
         value:60
+    },
+]
+export const allCategory=[
+    {
+        id:"portfolio-all",
+        title:"همه",
+        value:"all",
+    },
+    {
+        id:"portfolio-e-commerce",
+        title:"فروشگاهی",
+        value:"e-commerce",
+    },
+    {
+        id:"portfolio-portfolio",
+        title:"شخصی",
+        value:"portfolio",
+    },
+    {
+        id:"portfolio-education",
+        title:"آموزشی",
+        value:"education",
+    },
+    {
+        id:"portfolio-resturant",
+        title:"رستوران وکافه",
+        value:"resturant",
+    },
+]
+export const allPortfolio=[
+    {
+        id:"portfolio-digiland",
+        title:"فروشگاه دیجی لند",
+        link:"http://www.google.com",
+        img:["prot1.jpg","port2.jpg"],
+        language:"html,css,react,redux",
+        category:"e-commerce"
     },
 ]

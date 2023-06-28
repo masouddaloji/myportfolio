@@ -18,49 +18,98 @@
   .menu-item {
     @apply relative cursor-pointer flex items-center justify-center dark:bg-item-mobile bg-silver w-12 h-12 rounded-full transition-all duration-300 dark:lg:bg-item-dark hover:bg-primary dark:hover:bg-primary;
   }
-  .menu-item-text{
-   @apply hidden lg:block lg:absolute lg:top-0 lg:right-0 lg:leading-[3rem] lg:pl-6 lg:pr-8 lg:opacity-0 lg:text-sm lg:whitespace-nowrap lg:rounded-[30px] lg:bg-primary lg:text-white lg:h-12 lg:-z-10 lg:transition-all lg:duration-300 lg:group-hover:right-6 lg:group-hover:rounded-tl-[30px] lg:group-hover:rounded-tr-none lg:group-hover:rounded-bl-[30px] lg:group-hover:rounded-br-none lg:group-hover:opacity-100
+  .menu-item-text {
+    @apply hidden lg:block lg:absolute lg:top-0 lg:right-0 lg:leading-[3rem] lg:pl-6 lg:pr-8 lg:opacity-0 lg:text-sm lg:whitespace-nowrap lg:rounded-[30px] lg:bg-primary lg:text-white lg:h-12 lg:-z-10 lg:transition-all lg:duration-300 lg:group-hover:right-6 lg:group-hover:rounded-tl-[30px] lg:group-hover:rounded-tr-none lg:group-hover:rounded-bl-[30px] lg:group-hover:rounded-br-none lg:group-hover:opacity-100;
   }
-  .menu-item-icon{
-    @apply text-txt-gray text-xl transition-all duration-300 dark:text-white group-hover:text-white
+  .menu-item-icon {
+    @apply text-txt-gray text-xl transition-all duration-300 dark:text-white group-hover:text-white;
   }
-  .menu-item.menu-item--active{
-    @apply text-white bg-primary
+  .menu-item.menu-item--active {
+    @apply text-white bg-primary;
   }
-  .menu-item.menu-item--active .menu-item-icon{
-   @apply text-white
+  .menu-item.menu-item--active .menu-item-icon {
+    @apply text-white;
   }
-  .mainBtn{
-    @apply relative inline-block overflow-hidden py-4 pr-9 pl-20 border border-primary rounded-[2.25rem]
+  .mainBtn {
+    @apply relative inline-block overflow-hidden py-4 pr-9 pl-20 border border-primary rounded-[2.25rem];
   }
-  .mainBtn-effect{
-    @apply absolute top-0 -left-full w-full h-full bg-primary  ease-in-out transition-all duration-300 group-hover:left-0
+  .mainBtn-effect {
+    @apply absolute top-0 -left-full w-full h-full bg-primary  ease-in-out transition-all duration-300 group-hover:left-0;
   }
-  .mainBtn-text{
-   @apply text-sm text-txt-gray transition-all duration-300 relative z-10 group-hover:text-white dark:text-white
+  .mainBtn-text {
+    @apply text-sm text-txt-gray transition-all duration-300 relative z-10 group-hover:text-white dark:text-white;
   }
-  .mainBtn-iconbox{
-    @apply absolute top-0 left-0 flex items-center justify-center w-14 h-14 bg-primary rounded-full text-white
+  .mainBtn-iconbox {
+    @apply absolute top-0 left-0 flex items-center justify-center w-14 h-14 bg-primary rounded-full text-white;
   }
-  .header-section{
-    @apply text-txt-gray dark:text-white text-center text-3xl
+  .header-section {
+    @apply text-txt-gray dark:text-white text-start lg:text-center text-xl lg:text-3xl;
   }
-  
+  .col-6 {
+    @apply w-1/2 px-2.5 md:px-[15px];
+  }
+  .col-12 {
+    @apply w-full px-2.5 md:px-[15px];
+  }
+  .col-4 {
+    @apply w-4/12 px-2.5 md:px-[15px];
+  }
+  .col-8 {
+    @apply w-8/12 px-2.5 md:px-[15px];
+  }
+  .page-title {
+    @apply text-3xl lg:text-6xl text-txt-gray dark:text-white flex items-center justify-center gap-2;
+  }
+  .modal {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9/12  max-w-[650px] bg-white dark:bg-black-05 z-50 rounded-2xl p-2.5 md:p-5;
+  }
+  .bg-me {
+    background: url("./../public/images/dark.jpg") no-repeat center;
+    background-size: cover;
+  }
+  .anim-circle {
+    stroke-dashoffset: 350;
+    animation: cicle-animation 2s 0.5s linear forwards;
+  }
+  .overlay {
+    background: linear-gradient(to top, #ffb400 50%, transparent);
+  }
+  .gallery .active-category {
+    @apply text-primary dark:text-primary;
+  }
+  .mask {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  .input {
+    @apply w-full py-2.5 px-6 rounded-3xl dark:bg-black-05 border border-border-light dark:border-[#111] outline-none text-txt-gray dark:text-silver  block text-sm dark:focus:border-primary focus:border-primary;
+  }
+  .error{
+    @apply text-sm block mt-2.5 text-red-600 dark:text-red-900 px-3
+  }
+  .input.invalid-input{
+   @apply border-red-700
+  }
 }
 
 @layer utilities {
   .clip-path-left {
     clip-path: polygon(0 0, 58% 0, 100% 100%, 0 100%);
   }
-  .backtext-color{
-   color: #ffffff12;
+  .backtext-color {
+    color: #ffffff12;
   }
-  .main-icon{
+  .main-icon {
     font-size: 19px;
   }
   .ss02 {
     -moz-font-feature-settings: "ss02";
     -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
+  }
+}
+
+@keyframes cicle-animation {
+  to {
+    stroke-dashoffset: var(--offset);
   }
 }

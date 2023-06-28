@@ -23,7 +23,13 @@ export default {
       },
       boxShadow:{
         "nav-shadow":"0 0 47px #dedede;"
-      }
+      },
+      screens:{
+        "mobile-lg":"576px"
+      },
+      width:{
+        "main-text":"15px"
+      },
     },
   },
   plugins: [],

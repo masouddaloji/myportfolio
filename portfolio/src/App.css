@@ -1,14 +1,14 @@
 .persian {
   direction: rtl;
 }
-.bg-me {
-  background: url("./../public/dark.jpg") no-repeat center;
-  background-size: cover;
-}
-.app::-webkit-scrollbar {
-  display: none;
+
+body .app::-webkit-scrollbar {
+  display: none !important;
 }
 
 .app {
   scrollbar-width: none;
+}
+.gallery .category::-webkit-scrollbar {
+  display: none;
 }
