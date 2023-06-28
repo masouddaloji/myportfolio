@@ -1,7 +1,8 @@
 import { FaArrowLeft } from "react-icons/fa";
 const Home = () => {
   return (
-    <div className=" w-full min-h-screen relative bg-white lg:pr-14 dark:bg-dark-bg">
+    <div className=" w-full min-h-screen relative bg-white lg:pr-14 dark:bg-dark-bg" data-aos="fade-down"
+    data-aos-easing="ease-in-out">
     {/* bg yellow */}
       <div className="hidden lg:block fixed top-0 left-0 w-80 min-h-screen z-10 clip-path-left bg-primary"></div>
       {/* end bg yellow */}
@@ -19,13 +20,13 @@ const Home = () => {
             کیفیت برای پروژه‌هایتان هستید، آماده همکاری هستم. با تعهد و پشتکار
             من، باور دارم که می‌توانیم به همراه هم به اهداف خود دست پیدا کنیم.
           </p>
-          <button className="btn relative inline-block overflow-hidden py-4 pr-9 pl-20 border border-primary rounded-[2.25rem]  group ">
-          <span className="absolute top-0 -left-full w-full h-full bg-primary  ease-in-out transition-all duration-300 group-hover:left-0"></span>
-            <span className="text-sm text-gray-600 transition-all duration-300 relative z-10 group-hover:text-white dark:text-white">
+          <button className="mainBtn group">
+          <span className="mainBtn-effect"></span>
+            <span className="mainBtn-text">
               بیشتر بخوانید
             </span>
-            <span className="absolute top-0 left-0 flex items-center justify-center w-14 h-14 bg-primary rounded-full text-white">
-              <FaArrowLeft className="text-[19px]" />
+            <span className="mainBtn-iconbox">
+              <FaArrowLeft className="main-icon" />
             </span>
           </button>
         </div>

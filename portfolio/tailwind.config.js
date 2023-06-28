@@ -14,10 +14,12 @@ export default {
       colors:{
         "primary":"#FFB400",
         "txt-gray":"#666",
-        "btn-bg":"#eee",
+        "silver":"#eee",
         "dark-bg":"#111",
         "item-dark":"#2b2a2a",
-        "item-mobile":"#444"
+        "item-mobile":"#444",
+        "black-05":"#252525",
+        "border-light":"#ddd"
       },
       boxShadow:{
         "nav-shadow":"0 0 47px #dedede;"

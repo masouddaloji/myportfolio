@@ -16,18 +16,51 @@
 }
 @layer components {
   .menu-item {
-    @apply relative cursor-pointer flex items-center justify-center dark:bg-item-mobile bg-btn-bg w-12 h-12 rounded-full transition-all duration-300 dark:lg:bg-item-dark hover:bg-primary dark:hover:bg-primary;
+    @apply relative cursor-pointer flex items-center justify-center dark:bg-item-mobile bg-silver w-12 h-12 rounded-full transition-all duration-300 dark:lg:bg-item-dark hover:bg-primary dark:hover:bg-primary;
   }
   .menu-item-text{
-   @apply hidden lg:absolute lg:top-0 lg:right-0 lg:leading-[3rem] lg:pl-6 lg:pr-8 lg:opacity-0 lg:text-sm lg:whitespace-nowrap lg:rounded-[30px] lg:bg-primary lg:text-white lg:h-12 lg:-z-10 lg:transition-all lg:duration-300 lg:group-hover:right-6 lg:group-hover:rounded-tl-[30px] lg:group-hover:rounded-tr-none lg:group-hover:rounded-bl-[30px] lg:group-hover:rounded-br-none lg:group-hover:opacity-100
+   @apply hidden lg:block lg:absolute lg:top-0 lg:right-0 lg:leading-[3rem] lg:pl-6 lg:pr-8 lg:opacity-0 lg:text-sm lg:whitespace-nowrap lg:rounded-[30px] lg:bg-primary lg:text-white lg:h-12 lg:-z-10 lg:transition-all lg:duration-300 lg:group-hover:right-6 lg:group-hover:rounded-tl-[30px] lg:group-hover:rounded-tr-none lg:group-hover:rounded-bl-[30px] lg:group-hover:rounded-br-none lg:group-hover:opacity-100
   }
-  .menu-iten-icon{
+  .menu-item-icon{
     @apply text-txt-gray text-xl transition-all duration-300 dark:text-white group-hover:text-white
   }
+  .menu-item.menu-item--active{
+    @apply text-white bg-primary
+  }
+  .menu-item.menu-item--active .menu-item-icon{
+   @apply text-white
+  }
+  .mainBtn{
+    @apply relative inline-block overflow-hidden py-4 pr-9 pl-20 border border-primary rounded-[2.25rem]
+  }
+  .mainBtn-effect{
+    @apply absolute top-0 -left-full w-full h-full bg-primary  ease-in-out transition-all duration-300 group-hover:left-0
+  }
+  .mainBtn-text{
+   @apply text-sm text-txt-gray transition-all duration-300 relative z-10 group-hover:text-white dark:text-white
+  }
+  .mainBtn-iconbox{
+    @apply absolute top-0 left-0 flex items-center justify-center w-14 h-14 bg-primary rounded-full text-white
+  }
+  .header-section{
+    @apply text-txt-gray dark:text-white text-center text-3xl
+  }
+  
 }
 
 @layer utilities {
   .clip-path-left {
     clip-path: polygon(0 0, 58% 0, 100% 100%, 0 100%);
+  }
+  .backtext-color{
+   color: #ffffff12;
+  }
+  .main-icon{
+    font-size: 19px;
+  }
+  .ss02 {
+    -moz-font-feature-settings: "ss02";
+    -webkit-font-feature-settings: "ss02";
+    font-feature-settings: "ss02";
   }
 }
