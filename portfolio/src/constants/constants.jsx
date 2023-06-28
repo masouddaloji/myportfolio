@@ -2,7 +2,10 @@
 import {
     FaBriefcase,
     FaEnvelopeOpen,
+    FaGithub,
     FaHome,
+    FaInstagram,
+    FaTelegramPlane,
     FaUserAlt,
   } from "react-icons/fa";
 
@@ -176,5 +179,22 @@ export const allPortfolio=[
         img:["prot1.jpg","port2.jpg"],
         language:"html,css,react,redux",
         category:"e-commerce"
+    },
+]
+export const myLinks=[
+    {
+        id:"link-telegram",
+        icon:<FaTelegramPlane className="text-[17px]"/>,
+        link:"https://t.me/masouddaloji_front"
+    },
+    {
+        id:"link-instagram",
+        icon:<FaInstagram className="text-[17px]"/>,
+        link:"https://instagram.com/masouddaloji?igshid=NGExMmI2YTkyZg=="
+    },
+    {
+        id:"link-github",
+        icon:<FaGithub className="text-[17px]"/>,
+        link:"https://github.com/masouddaloji"
     },
 ]

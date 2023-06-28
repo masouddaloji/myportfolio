@@ -2,9 +2,16 @@ import { useRef, useState } from "react";
 //packages
 import emailjs from "@emailjs/browser";
 //icons
-import { FaEnvelopeOpen, FaMap, FaPhoneSquareAlt } from "react-icons/fa";
+import {
+  FaEnvelopeOpen,
+  FaMap,
+  FaPhoneSquareAlt,
+  FaTelegramPlane,
+} from "react-icons/fa";
 import { BsFillSendFill } from "react-icons/bs";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import { myLinks } from "../constants/constants";
 
 const Contact = () => {
   const {
@@ -33,7 +40,7 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
-          reset()
+          reset();
         },
         (error) => {
           console.log(error.text);
@@ -59,8 +66,8 @@ const Contact = () => {
         {/* start contact content */}
         <section className="pb-20">
           <div className="w-full flex flex-wrap">
-            <div className="col-12 lg:col-4 flex flex-col items-start text-justify text-[15px] text-txt-gray dark:text-white">
-              <p className="mb-5 leading-7">
+            <div className="col-12 lg:col-4 flex flex-col items-start gap-y-7 lg:gap-y-5 text-justify text-[15px] text-txt-gray dark:text-white">
+              <p className="leading-7">
                 با خیال راحت با من در تماس باشید. همواره آماده بحث درباره
                 پروژه‌های جدید، ایده‌های خلاقانه و فرصت‌هایی هستم که بخشی از
                 چشم‌انداز شما باشم. با تجربه و علاقه‌مندی به همکاری، به دنبال
@@ -68,26 +75,35 @@ const Contact = () => {
                 به تحقق اهدافتان نیز برسید.
               </p>
 
-              <div className="flex items-start gap-x-5 mb-5">
+              <div className="flex items-start gap-x-5 ">
                 <FaMap className="text-primary text-3xl" />
                 <p className="flex flex-col gap-2.5">
                   <span className="opacity-75">آدرس</span>
                   استان لرستان، شهرستان کوهدشت
                 </p>
               </div>
-              <div className="flex items-start gap-x-5 mb-5">
+
+              <div className="flex items-start gap-x-5 ">
                 <FaEnvelopeOpen className="text-primary text-3xl" />
                 <p className="flex flex-col gap-2.5">
                   <span className="opacity-75">ایمیل</span>
                   masouddaloji.front@gmail.com
                 </p>
               </div>
-              <div className="flex items-start gap-x-5 mb-5">
+
+              <div className="flex items-start gap-x-5 ">
                 <FaPhoneSquareAlt className="text-primary text-3xl" />
                 <p className="flex flex-col gap-2.5">
                   <span className="opacity-75">تلفن</span>
                   09039730443
                 </p>
+              </div>
+              <div className="flex items-center gap-x-4 mb-7 lg:mb-5">
+                {myLinks.map((item) => (
+                  <Link to={item.link} className="contact-link" key={item.id}>
+                    {item.icon}
+                  </Link>
+                ))}
               </div>
             </div>
             {/* inputes */}
@@ -188,9 +204,7 @@ const Contact = () => {
                       })}
                     />
                     {errors?.message && (
-                      <span className="error">
-                        {errors?.message?.message}
-                      </span>
+                      <span className="error">{errors?.message?.message}</span>
                     )}
                   </div>
                   <button className="mainBtn group" type="submit">
