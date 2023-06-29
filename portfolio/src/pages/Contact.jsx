@@ -12,6 +12,7 @@ import { BsFillSendFill } from "react-icons/bs";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { myLinks } from "../constants/constants";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const {
@@ -39,11 +40,11 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          toast.success("پیغام شما با موفقیت ارسال شد");
           reset();
         },
         (error) => {
-          console.log(error.text);
+          toast.error("ارسال پیغام با مشکل مواجه شد");
         }
       );
   };
