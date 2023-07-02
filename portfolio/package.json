@@ -1,6 +1,5 @@
 {
   "name": "portfolio",
-  "homepage": "https://masouddaloji.github.io/myportfolio",
   "private": "false",
   "version": "0.0.0",
   "type": "module",
@@ -8,8 +7,6 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy":"gh-pages -d build",
-    "predeploy":"npm run build"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
