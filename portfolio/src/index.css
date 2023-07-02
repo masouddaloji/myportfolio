@@ -92,6 +92,10 @@
   .contact-link {
     @apply w-10 h-10 rounded-full flex items-center justify-center bg-silver dark:bg-black-05 text-txt-gray dark:text-white transition-all duration-300 hover:bg-primary hover:text-white dark:hover:bg-primary;
   }
+  .type-animation{
+    animation: typing 5s steps(21) forwards,
+               blink 1s  forwards;
+  }
 }
 
 @layer utilities {
@@ -115,4 +119,20 @@
   to {
     stroke-dashoffset: var(--offset);
   }
+}
+@keyframes typing {
+ 0%{
+  width: 0;
+ }
+ 100%{
+  width: 100%;
+ }
+}
+@keyframes blink {
+ 0%,100%{
+  border-left:2px solid transparent;
+ }
+ 50%{
+  border-left:2px solid #666;
+ }
 }

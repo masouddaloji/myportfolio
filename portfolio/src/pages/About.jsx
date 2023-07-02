@@ -1,9 +1,14 @@
 //constants
 import { personalAnalize, personalInfos, skills } from "../constants/constants";
+//custom hook
+import useTitle from "../hooks/useTitle";
 //icons
 import { FaBriefcase, FaDownload } from "react-icons/fa";
+//persian text
+import PersianTexts from "../PersianTexts";
 
 const About = () => {
+  useTitle("درباره من")
   return (
     <section
       className="w-full min-h-screen relative bg-white  lg:pr-20 dark:bg-dark-bg "
@@ -27,7 +32,7 @@ const About = () => {
             <div className="col-12 lg:col-6">
               <div className="w-full flex flex-col items-start gap-7">
                 <h3 className="text-2xl text-txt-gray dark:text-white ">
-                  اطلاعات شخصی
+                  {PersianTexts.about.personalInfo}
                 </h3>
                 <ul className="flex flex-wrap">
                   {personalInfos.map((info) => (
@@ -45,7 +50,7 @@ const About = () => {
                 </ul>
                 <button className="mainBtn group">
                   <span className="mainBtn-effect"></span>
-                  <span className="mainBtn-text">دانلود رزومه</span>
+                  <span className="mainBtn-text">{PersianTexts.about.btn}</span>
                   <span className="mainBtn-iconbox">
                     <FaDownload className="main-icon" />
                   </span>
@@ -84,7 +89,7 @@ const About = () => {
         <hr className="block border-t border-border-light dark:border-black-05 my-14 w-2/5 mx-auto" />
         {/* start skill */}
         <section className="flex flex-col gap-y-7">
-          <h3 className="header-section">مهارت های من</h3>
+          <h3 className="header-section">{PersianTexts.about.mySkill}</h3>
 
           <div className="flex flex-wrap justify-between mt-3 gap-5 gap-y-10">
             {skills.map((skill) => (
@@ -115,7 +120,9 @@ const About = () => {
                       strokeLinecap="round"
                       strokeDasharray={350}
                       className="fill-none stroke-primary stroke-[10] anim-circle"
-                      style={{"--offset":`${350 - 350 * (skill.value / 100)}`}}
+                      style={{
+                        "--offset": `${350 - 350 * (skill.value / 100)}`,
+                      }}
                     />
                   </svg>
                 </div>
@@ -131,7 +138,9 @@ const About = () => {
         {/* end skill */}
         {/* start EXPERIENCE & EDUCATION */}
         <section className="pt-10 pb-20 flex flex-col gap-y-7">
-          <h3 className="header-section pb-5">تجربه و آموزش</h3>
+          <h3 className="header-section pb-5">
+            {PersianTexts.about.education}
+          </h3>
           <ul className="w-full flex flex-wrap justify-between">
             <li className="w-full lg:w-1/2 mb-10 flex flex-col items-start gap-3 pr-16 relative">
               <span className="absolute top-0 right-0 w-10 h-10 bg-primary text-white rounded-full z-10 flex items-center justify-center">

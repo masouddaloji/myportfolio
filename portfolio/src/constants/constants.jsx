@@ -79,7 +79,7 @@ export const personalAnalize=[
     {
         id:"analize-years-experencs",
         title1:"سال",
-        title2:"تجربه",
+        title2:"سابقه",
         value:"1"
     },
     {
@@ -90,14 +90,14 @@ export const personalAnalize=[
     },
     {
         id:"analize-years-experencs1",
-        title1:"سال",
-        title2:"تجربه",
+        title1:"پروژه",
+        title2:"جاری",
         value:"1"
     },
     {
         id:"analize-years-experencs1",
-        title1:"پروژه",
-        title2:"تکمیل شده",
+        title1:"رضایت",
+        title2:"مشتری",
         value:"1"
     },
    

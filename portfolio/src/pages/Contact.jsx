@@ -1,20 +1,25 @@
-import { useRef, useState } from "react";
+import { useCallback, useRef } from "react";
 //packages
 import emailjs from "@emailjs/browser";
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+//custome hooks
+import useTitle from "../hooks/useTitle";
 //icons
 import {
   FaEnvelopeOpen,
   FaMap,
   FaPhoneSquareAlt,
-  FaTelegramPlane,
 } from "react-icons/fa";
 import { BsFillSendFill } from "react-icons/bs";
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+//constants
 import { myLinks } from "../constants/constants";
-import { toast } from "react-toastify";
+//persian text
+import PersianTexts from "../PersianTexts";
 
 const Contact = () => {
+  useTitle("ارتباط من")
   const {
     handleSubmit,
     register,
@@ -30,7 +35,8 @@ const Contact = () => {
   });
 
   const form = useRef();
-  const sendEmail = (data) => {
+
+  const sendEmail =useCallback( (data) => {
     emailjs
       .sendForm(
         "service_kdbr1b8",
@@ -40,14 +46,14 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          toast.success("پیغام شما با موفقیت ارسال شد");
+          toast.success(PersianTexts.contact.sendMessageSuccess);
           reset();
         },
         (error) => {
-          toast.error("ارسال پیغام با مشکل مواجه شد");
+          toast.error(PersianTexts.contact.senMessageError);
         }
       );
-  };
+  },[]);
 
   return (
     <section
@@ -68,19 +74,13 @@ const Contact = () => {
         <section className="pb-20">
           <div className="w-full flex flex-wrap">
             <div className="col-12 lg:col-4 flex flex-col items-start gap-y-7 lg:gap-y-5 text-justify text-[15px] text-txt-gray dark:text-white">
-              <p className="leading-7">
-                با خیال راحت با من در تماس باشید. همواره آماده بحث درباره
-                پروژه‌های جدید، ایده‌های خلاقانه و فرصت‌هایی هستم که بخشی از
-                چشم‌انداز شما باشم. با تجربه و علاقه‌مندی به همکاری، به دنبال
-                رشد و پیشرفت هستم. خوشحال خواهم شد اگر بتوانم به شما کمک کنم و
-                به تحقق اهدافتان نیز برسید.
-              </p>
+              <p className="leading-7">{PersianTexts.contact.solgan}</p>
 
               <div className="flex items-start gap-x-5 ">
                 <FaMap className="text-primary text-3xl" />
                 <p className="flex flex-col gap-2.5">
                   <span className="opacity-75">آدرس</span>
-                  استان لرستان، شهرستان کوهدشت
+                  {PersianTexts.contact.address}
                 </p>
               </div>
 
@@ -88,7 +88,7 @@ const Contact = () => {
                 <FaEnvelopeOpen className="text-primary text-3xl" />
                 <p className="flex flex-col gap-2.5">
                   <span className="opacity-75">ایمیل</span>
-                  masouddaloji.front@gmail.com
+                  {PersianTexts.contact.email}
                 </p>
               </div>
 
@@ -96,7 +96,7 @@ const Contact = () => {
                 <FaPhoneSquareAlt className="text-primary text-3xl" />
                 <p className="flex flex-col gap-2.5">
                   <span className="opacity-75">تلفن</span>
-                  09039730443
+                  {PersianTexts.contact.phone}
                 </p>
               </div>
               <div className="flex items-center gap-x-4 mb-7 lg:mb-5">
@@ -119,14 +119,14 @@ const Contact = () => {
                       }`}
                       placeholder="نام"
                       {...register("user_name", {
-                        required: "وارد کردن نام الزامی می باشد",
+                        required: PersianTexts.contact.error.userName.required,
                         minLength: {
                           value: 5,
-                          message: "حداقل تعداد کاراکتر نام پنج می باشد",
+                          message: PersianTexts.contact.error.userName.min,
                         },
                         maxLength: {
                           value: 20,
-                          message: "حداکثر تعداد کاراکتر نام بیست می باشد",
+                          message: PersianTexts.contact.error.userName.max,
                         },
                       })}
                     />
@@ -144,18 +144,18 @@ const Contact = () => {
                       }`}
                       placeholder="ایمیل"
                       {...register("user_email", {
-                        required: "وارد کردن ایمیل الزامی می باشد",
+                        required: PersianTexts.contact.error.email.required,
                         minLength: {
                           value: 10,
-                          message: "حداقل تعداد کاراکتر ایمیل ده می باشد",
+                          message: PersianTexts.contact.error.email.min,
                         },
                         maxLength: {
                           value: 30,
-                          message: "حداکثر تعداد کاراکتر ایمیل سی می باشد",
+                          message: PersianTexts.contact.error.email.max,
                         },
                         pattern: {
                           value: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/g,
-                          message: "لطفا یک ایمیل معتبر وارد کنید",
+                          message: PersianTexts.contact.error.email.match,
                         },
                       })}
                     />
@@ -171,14 +171,14 @@ const Contact = () => {
                       className={`input ${errors?.subject && "invalid-input"}`}
                       placeholder="موضوع"
                       {...register("subject", {
-                        required: "وارد کردن موضوع الزامی می باشد",
+                        required: PersianTexts.contact.error.subject.required,
                         minLength: {
                           value: 4,
-                          message: "حداقل تعداد کاراکتر موضوع چهار می باشد",
+                          message: PersianTexts.contact.error.subject.min,
                         },
                         maxLength: {
                           value: 40,
-                          message: "حداکثر تعداد کاراکتر موضوع چهل می باشد",
+                          message: PersianTexts.contact.error.subject.max,
                         },
                       })}
                     />
@@ -193,14 +193,14 @@ const Contact = () => {
                       }`}
                       placeholder="پیغام شما"
                       {...register("message", {
-                        required: "وارد کردن پیغام الزامی می باشد",
+                        required: PersianTexts.contact.error.message.required,
                         minLength: {
                           value: 10,
-                          message: "حداقل تعداد کاراکتر پیغام ده می باشد",
+                          message: PersianTexts.contact.error.message.min,
                         },
                         maxLength: {
                           value: 300,
-                          message: "حداکثر تعداد کاراکتر پیغام سیصد می باشد",
+                          message: PersianTexts.contact.error.message.max,
                         },
                       })}
                     />
@@ -210,7 +210,9 @@ const Contact = () => {
                   </div>
                   <button className="mainBtn group" type="submit">
                     <span className="mainBtn-effect"></span>
-                    <span className="mainBtn-text">ارسال پیغام</span>
+                    <span className="mainBtn-text">
+                      {PersianTexts.contact.btn}
+                    </span>
                     <span className="mainBtn-iconbox">
                       <BsFillSendFill className="main-icon" />
                     </span>

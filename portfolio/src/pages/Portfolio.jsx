@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 import { allCategory, allPortfolio } from "../constants/constants";
 //custome hook
 import useClickOutSide from "../hooks/useClickOutSide";
+import useTitle from "../hooks/useTitle";
 //icons
 import { FaCode, FaExternalLinkAlt } from "react-icons/fa";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const Portfolio = () => {
+  useTitle("نمونه کار های من")
   const maskRef=useRef()
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [IsShowPortfolioDetails, setIsShowPortfolioDetails] = useState(false);

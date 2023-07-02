@@ -7,6 +7,7 @@ import {ToastContainer} from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 //components
 import App from './App'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 //styles
 import './index.css'
 
@@ -26,6 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       pauseOnHover
       theme="colored"
     />
+    <ScrollToTop />
   </BrowserRouter>
   </React.StrictMode>,
 )
