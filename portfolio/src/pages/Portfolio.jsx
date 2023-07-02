@@ -130,10 +130,11 @@ const Portfolio = () => {
               </div>
             </div>
             {/* imgbox */}
-            <div className="my-2.5rem w-full h-auto lg:h-80 rounded-2xl overflow-hidden">
+            <div className="my-2.5rem w-full lg:h-80 rounded-2xl overflow-hidden">
               <img
                 src={`./images/${portfolioDetails?.img[0]}`}
                 alt="portfolio larg image"
+                className="w-full h-full"
               />
             </div>
           </div>

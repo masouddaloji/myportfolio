@@ -1,5 +1,6 @@
 //packages
 import { useNavigate } from "react-router-dom";
+import Typewriter from 'typewriter-effect';
 //custome hooks
 import useTitle from "../hooks/useTitle";
 //icons
@@ -8,7 +9,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import PersianTexts from "../PersianTexts";
 
 const Home = () => {
-  useTitle("مسعود دلوجی")
+  useTitle("مسعود دلوجی");
   const navigate = useNavigate();
   return (
     <section
@@ -23,21 +24,25 @@ const Home = () => {
         {/* text box */}
         <div className="px-2.5 pb-20 flex flex-col items-center  gap-6  lg:basis-3/5 lg:items-start lg:p-5 max-w-lg mx-auto order-2 lg:order-1">
           <h1 className="text-primary text-2xl md:text-3xl lg:text-4xl ">
-            {PersianTexts.home.myName}
+
+            <Typewriter
+              options={{
+                strings: [PersianTexts.home.myName, PersianTexts.home.myWork],
+                autoStart: true,
+                loop: true,
+                pauseFor:2000,
+                
+              }}
+            />
           </h1>
-          <h2 className="text-stone-600 text-2xl md:text-3xl lg:text-4xl inline-block dark:text-white">
-            {PersianTexts.home.myWork}
-          </h2>
           <p className="text-gray-600 text-sm md:text-base  text-justify leading-6 dark:text-white">
-          {PersianTexts.home.mySolgan}
+            {PersianTexts.home.mySolgan}
           </p>
           <button className="mainBtn group" onClick={() => navigate("/about")}>
             <span className="mainBtn-effect"></span>
-            <span className="mainBtn-text">
-            {PersianTexts.home.btn}
-            </span>
+            <span className="mainBtn-text">{PersianTexts.home.btn}</span>
             <span className="mainBtn-iconbox">
-              <FaArrowLeft className="main-icon"/>
+              <FaArrowLeft className="main-icon" />
             </span>
           </button>
         </div>
