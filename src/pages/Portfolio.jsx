@@ -42,7 +42,7 @@ const Portfolio = () => {
 
         {/* start gallery */}
         <section className="gallery flex flex-col gap-10 px-2.5 pb-20">
-          <ul className="category w-full flex items-center justify-center gap-x-5 overflow-x-scroll">
+          <ul className="category w-full flex items-center mobile-lg:justify-center gap-5 overflow-x-scroll">
             {allCategory.map((category) => (
               <li
                 className={` ${

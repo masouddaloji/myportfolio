@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 //constants
 import { personalAnalize, personalInfos, skills } from "../constants/constants";
 //custom hook
@@ -8,7 +9,36 @@ import { FaBriefcase, FaDownload } from "react-icons/fa";
 import PersianTexts from "../PersianTexts";
 
 const About = () => {
-  useTitle("درباره من")
+  useTitle("درباره من");
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("anim-circle");
+        } else {
+          entry.target.classList.remove("anim-circle");
+        }
+      });
+    }, options);
+
+    const circlesSvg = document.querySelectorAll(".circle-svg");
+
+    circlesSvg.forEach((circle) => {
+      observer.observe(circle);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <section
       className="w-full min-h-screen relative bg-white  lg:pr-20 dark:bg-dark-bg "
@@ -90,7 +120,6 @@ const About = () => {
         {/* start skill */}
         <section className="flex flex-col gap-y-7">
           <h3 className="header-section">{PersianTexts.about.mySkill}</h3>
-
           <div className="flex flex-wrap justify-between mt-3 gap-5 gap-y-10">
             {skills.map((skill) => (
               <div
@@ -107,11 +136,10 @@ const About = () => {
                       </span>
                     </div>
                   </div>
-
                   <svg
                     width="120"
                     height="120"
-                    className="absolute top-0 left-0 -rotate-90"
+                    className="absolute top-0 left-0 -rotate-90 circle-svg"
                   >
                     <circle
                       cx="60"
@@ -119,7 +147,8 @@ const About = () => {
                       r="55"
                       strokeLinecap="round"
                       strokeDasharray={350}
-                      className="fill-none stroke-primary stroke-[10] anim-circle"
+                      // className="fill-none stroke-primary stroke-[10] anim-circle"
+                      className="fill-none stroke-primary stroke-[10] circle-skill"
                       style={{
                         "--offset": `${350 - 350 * (skill.value / 100)}`,
                       }}
