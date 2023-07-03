@@ -175,7 +175,7 @@ export const allPortfolio=[
     {
         id:"portfolio-digiland",
         title:"فروشگاه دیجی لند",
-        link:"http://www.google.com",
+        link:"https://digiland.iran.liara.run",
         img:["digiland_screen.jpg"],
         language:"html,css,react,redux",
         category:"e-commerce"
