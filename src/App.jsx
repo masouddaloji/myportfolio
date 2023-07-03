@@ -5,7 +5,7 @@ import AOS from 'aos';
 //style aos
 import 'aos/dist/aos.css';
 //components
-import Home from "./pages/home";
+import Home from "./pages/Home";
 import Layout from "./components/Layout/Layout";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
