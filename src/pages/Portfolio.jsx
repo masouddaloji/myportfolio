@@ -113,8 +113,7 @@ const Portfolio = () => {
                   <p className="uppercase">{portfolioDetails?.language}</p>
                 </div>
               </div>
-
-              <div className="col-12 mt-4 mobile-lg:mt-0 mobile-lg:col-6">
+              <div className="col-12 mt-2.5 mobile-lg:mt-0 mobile-lg:col-6">
                 <div className="flex flex-col lg:flex-row gap-2.5 text-txt-gray dark:text-white text-[15px]">
                   <p className="flex items-center gap-2 ">
                     <FaExternalLinkAlt className="inline-block" />
@@ -130,11 +129,11 @@ const Portfolio = () => {
               </div>
             </div>
             {/* imgbox */}
-            <div className="my-2.5rem w-full lg:h-80 rounded-2xl overflow-hidden">
+            <div className="my-2.5rem w-full h-auto lg:h-80 rounded-2xl overflow-hidden">
               <img
                 src={`./images/${portfolioDetails?.img[0]}`}
                 alt="portfolio larg image"
-                className="w-full h-full"
+                className="w-full h-full block"
               />
             </div>
           </div>
