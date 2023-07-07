@@ -97,23 +97,23 @@ const Portfolio = () => {
         <div className="fixed inset-0 mask z-40" ref={maskRef}>
           <div className="modal" >
             <AiOutlineCloseCircle
-              className="w-8 h-8 lg:w-12 lg:h-12 absolute text-white -top-10 right-0 md:top-0 md:-right-10 lg:-top-8 lg:-right-14 cursor-pointer"
+              className="w-8 h-8 lg:w-12 lg:h-12 absolute text-white -top-10 right-0 md:-top-8 md:-right-6 lg:-right-14 cursor-pointer"
               onClick={() => setIsShowPortfolioDetails(false)}
             />
             <h3 className="text-primary py-2.5 lg:py-5 text-center mb-2.5 text-2xl">
               {portfolioDetails?.title}
             </h3>
             <div className="flex flex-wrap md:gap-y-5 mb-5 lg:mb-10">
-              <div className="col-12 mobile-lg:col-6">
+              <div className="col-12 md:col-6">
                 <div className="flex flex-col lg:flex-row gap-2.5 text-txt-gray dark:text-white text-[15px]">
                   <p className="flex items-center gap-2 ">
                     <FaCode className="inline-block" />
-                    <span>زبان ها : </span>
+                    <span>تکنولوژی ها : </span>
                   </p>
                   <p className="uppercase">{portfolioDetails?.language}</p>
                 </div>
               </div>
-              <div className="col-12 mt-2.5 mobile-lg:mt-0 mobile-lg:col-6">
+              <div className="col-12 mt-2.5 mobile-lg:mt-0 md:col-6">
                 <div className="flex flex-col lg:flex-row gap-2.5 text-txt-gray dark:text-white text-[15px]">
                   <p className="flex items-center gap-2 ">
                     <FaExternalLinkAlt className="inline-block" />
