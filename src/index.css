@@ -64,7 +64,7 @@
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11/12  max-w-[700px] bg-white dark:bg-black-05 z-50 rounded-2xl p-2.5 md:p-5;
   }
   .bg-me {
-    background: url("./../public/images/dark.jpg") no-repeat center;
+    background: url("./../public/images/masoud.png") no-repeat center;
     background-size: cover;
   }
   .circle-skill {
