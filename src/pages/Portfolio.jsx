@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 //packages
 import { Link } from "react-router-dom";
+//components
+import Error from "../components/Error";
 //constants
 import { allCategory, allPortfolio } from "../constants/constants";
 //custome hook
@@ -11,8 +13,8 @@ import { FaCode, FaExternalLinkAlt } from "react-icons/fa";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const Portfolio = () => {
-  useTitle("نمونه کار های من")
-  const maskRef=useRef()
+  useTitle("نمونه کار های من");
+  const maskRef = useRef();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [IsShowPortfolioDetails, setIsShowPortfolioDetails] = useState(false);
   const [portfolioDetails, setPortfolioDetails] = useState({});
@@ -23,7 +25,7 @@ const Portfolio = () => {
       return portfolio.category === selectedCategory;
     }
   });
-  useClickOutSide({ ref:maskRef,setStateHandler:setIsShowPortfolioDetails })
+  useClickOutSide({ ref: maskRef, setStateHandler: setIsShowPortfolioDetails });
   return (
     <section
       className="w-full min-h-screen relative bg-white  lg:pr-20 dark:bg-dark-bg "
@@ -57,10 +59,11 @@ const Portfolio = () => {
           </ul>
 
           {/* start gallery images */}
-          <div className="grid grid-cols-1 mobile-lg:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="">
             {/* item */}
-            {filteredPortfolio?.length
-              ? filteredPortfolio.map((item) => (
+            {filteredPortfolio?.length ? (
+              <div className="grid grid-cols-1 mobile-lg:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredPortfolio.map((item) => (
                   <div
                     className="w-full h-56 relative rounded-lg overflow-hidden group"
                     key={item.id}
@@ -84,8 +87,11 @@ const Portfolio = () => {
                       </span>
                     </div>
                   </div>
-                ))
-              : null}
+                ))}
+              </div>
+            ) : (
+              <Error />
+            )}
 
             {/* item */}
           </div>
@@ -95,7 +101,7 @@ const Portfolio = () => {
       </div>
       {IsShowPortfolioDetails && (
         <div className="fixed inset-0 mask z-40" ref={maskRef}>
-          <div className="modal" >
+          <div className="modal">
             <AiOutlineCloseCircle
               className="w-8 h-8 lg:w-12 lg:h-12 absolute text-white -top-10 right-0 md:-top-8 md:-right-6 lg:-right-14 cursor-pointer"
               onClick={() => setIsShowPortfolioDetails(false)}

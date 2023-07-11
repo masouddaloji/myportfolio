@@ -19,7 +19,7 @@ import { myLinks } from "../constants/constants";
 import PersianTexts from "../PersianTexts";
 
 const Contact = () => {
-  useTitle("ارتباط من")
+  useTitle("ارتباط با من")
   const {
     handleSubmit,
     register,
@@ -65,7 +65,7 @@ const Contact = () => {
         {/* start contact header */}
         <div className=" w-full py-16 relative">
           <h2 className="page-title">
-            ارتباط
+             ارتباط با
             <p className="text-primary">من</p>
           </h2>
         </div>
@@ -208,7 +208,9 @@ const Contact = () => {
                       <span className="error">{errors?.message?.message}</span>
                     )}
                   </div>
-                  <button className="mainBtn group" type="submit">
+                  <div className="col-12">
+
+                  <button className="mainBtn group w-full" type="submit">
                     <span className="mainBtn-effect"></span>
                     <span className="mainBtn-text">
                       {PersianTexts.contact.btn}
@@ -217,6 +219,7 @@ const Contact = () => {
                       <BsFillSendFill className="main-icon" />
                     </span>
                   </button>
+                  </div>
                 </div>
               </form>
             </div>

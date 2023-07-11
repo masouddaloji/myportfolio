@@ -167,7 +167,7 @@ export const allCategory=[
     },
     {
         id:"portfolio-resturant",
-        title:"رستوران وکافه",
+        title:"رستوران و کافه",
         value:"resturant",
     },
 ]
