@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+//packages
+import { Link } from "react-router-dom";
 //constants
 import { personalAnalize, personalInfos, skills } from "../constants/constants";
 //custom hook
@@ -80,7 +82,7 @@ const About = () => {
                 </ul>
                 <button className="mainBtn group">
                   <span className="mainBtn-effect"></span>
-                  <span className="mainBtn-text">{PersianTexts.about.btn}</span>
+                  <Link to="https://drive.google.com/uc?id=17AjOISAHPm5VWnEX2A7L2Tnh36nZVuCS&export=download" className="mainBtn-text">{PersianTexts.about.btn}</Link>
                   <span className="mainBtn-iconbox">
                     <FaDownload className="main-icon" />
                   </span>
@@ -147,7 +149,6 @@ const About = () => {
                       r="55"
                       strokeLinecap="round"
                       strokeDasharray={350}
-                      // className="fill-none stroke-primary stroke-[10] anim-circle"
                       className="fill-none stroke-primary stroke-[10] circle-skill"
                       style={{
                         "--offset": `${350 - 350 * (skill.value / 100)}`,
