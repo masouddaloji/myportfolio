@@ -111,38 +111,49 @@ export const skills=[
     {
         id:"skils-css",
         title:"css",
-        value:70
+        value:80
     },
     {
         id:"skils-javascript",
         title:"javascript",
-        value:70
+        value:80
     },
     {
         id:"skils-react",
         title:"react",
-        value:70
+        value:80
     },
     {
-        id:"skils-bootstrap",
-        title:"bootstrap",
-        value:50
+        id:"skils-next",
+        title:"next",
+        value:60
     },
     {
-        id:"skils-sas",
-        title:"sass",
-        value:50
-    },
-    {
-        id:"skils-tailwind",
-        title:"tailwindcss",
-        value:70
+        id:"skils-typeScript",
+        title:"typeScript",
+        value:80
     },
     {
         id:"skils-redux",
         title:"redux",
-        value:60
+        value:80
     },
+    {
+        id:"skils-bootstrap",
+        title:"bootstrap",
+        value:80
+    },
+    {
+        id:"skils-sas",
+        title:"sass",
+        value:80
+    },
+    {
+        id:"skils-tailwind",
+        title:"tailwindcss",
+        value:80
+    },
+    
 ]
 export const allCategory=[
     {
